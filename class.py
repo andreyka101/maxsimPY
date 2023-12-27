@@ -64,20 +64,31 @@ class transport():
         print(self.speed)
     
 
-class car(transport):
+# создаём класс Cаr который наследуется от класса trаnsроrt
+class Car(transport):
+    # обычный конструктор init
     def __init__(self, name: str, speed: int, numberPassengers: int, machineWeight: int , petrol : int):
+        # с помощью super наследуем все переменные и методы от класса родителя 
         super().__init__(name, speed, numberPassengers, machineWeight)
-        # остановился здесь
+        # создаём новую переменную
         self.petrol = petrol
-    
+    # создаём новый метод
+    def maximumDistance(self):
+        return self.petrol * self.speed
+    # изменяем метод родителя
+    def timeTravel(self, distance):
+        """aniani"""
+        
+
 
 
 bike = transport("my bike", 20 , 1 , 3)
 print(bike.timeTravel(100))
 bike.ani.ran()
 
-carRed = car("my car" , 300 , 2 , 50 , 60)
-print(carRed.timeTravel(100))
+carRed = Car("my car" , 300 , 2 , 50 , 6)
+print(carRed.timeTravel(5000))
+print(carRed.maximumDistance())
 
 
 # домашнее задание урока 2
