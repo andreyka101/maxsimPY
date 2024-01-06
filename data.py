@@ -8,6 +8,7 @@
 
 
 # dataWrite.write(sTr)
+# dataWrite.close()
 
 
 
