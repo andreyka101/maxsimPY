@@ -26,12 +26,12 @@ class animals():
 dog = animals("kas",7)
 cat = animals("sit",4)
 # вызов переменной
-print(dog.name)
-print(cat.name)
+# print(dog.name)
+# print(cat.name)
 # вызов метода
-dog.ran()
+# dog.ran()
 # способ увидеть закрытую переменную
-print(cat.showYears())
+# print(cat.showYears())
 
 
 # dz class
@@ -83,12 +83,12 @@ class Car(transport):
 
 
 bike = transport("my bike", 20 , 1 , 3)
-print(bike.timeTravel(100))
-bike.ani.ran()
+# print(bike.timeTravel(100))
+# bike.ani.ran()
 
 carRed = Car("my car" , 300 , 2 , 50 , 6)
-print(carRed.timeTravel(5000))
-print(carRed.maximumDistance())
+# print(carRed.timeTravel(5000))
+# print(carRed.maximumDistance())
 
 
 # домашнее задание урока 2
@@ -97,3 +97,50 @@ print(carRed.maximumDistance())
 # в конструкторе нужно в писать 2 числа
 # создать 4 метода: умножение , деление , сумма , вычитание
 # создать метод для добавления числа (его можно вызвать много раз и подучить много чисел)
+
+# урок 3  -------------------------------------------------------
+
+
+# class drink():
+#     ...
+class coffee():
+    sight = "добрый"
+    def __init__(self , a = "kas",s = 1):
+        self.name = a
+        self.__private_years = s
+        self.__private_years *= 10
+    def ran(self):
+        print(self.name+" ran")
+
+class tea():
+    sight = "добрый"
+    def __init__(self , a = "kas",s = 1):
+        self.name = a
+        self.__private_years = s
+        self.__private_years *= 10
+    def ran(self):
+        print(self.name+" ran")
+
+class cocoa():
+    sight = "добрый"
+    def __init__(self , a = "kas",s = 1):
+        self.name = a
+        self.__private_years = s
+        self.__private_years *= 10
+    def ran(self):
+        print(self.name+" ran")
+    
+class drink ():
+    coffee = coffee()
+    tea = tea()
+    cocoa = cocoa()
+        
+
+# afternoon = drink().tea
+# afternoon.ran()
+
+
+# домашнее задание урока 3
+# номер 1
+
+
