@@ -103,6 +103,7 @@ carRed = Car("my car" , 300 , 2 , 50 , 6)
 
 # class drink():
 #     ...
+
 class coffee():
     sight = "добрый"
     def __init__(self , a = "kas",s = 1):
@@ -129,13 +130,16 @@ class cocoa():
         self.__private_years *= 10
     def ran(self):
         print(self.name+" ran")
-    
+
+
+# класс который содержит в себе другие классы
 class drink ():
     coffee = coffee()
     tea = tea()
     cocoa = cocoa()
         
 
+# вызов класс в классе
 # afternoon = drink().tea
 # afternoon.ran()
 

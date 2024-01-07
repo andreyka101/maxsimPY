@@ -1,14 +1,19 @@
-# dataRead = open("file.txt","r").read()
-# dataWrite = open("file.txt","w")
-# sTr = ""
-# for i in dataRead:
-#     if (i=="5"):
-#         i = "0"
-#     sTr += i
+# метод open(файл , режим) используется для открытия файлов
+# метод read() считывает содержимое файла в строку (используется для чтения)
+dataRead = open("file.txt","r").read()
+# "w" режим для записи все режимы ниже
+dataWrite = open("file.txt","w")
+sTr = ""
+for i in dataRead:
+    if (i=="5"):
+        i = "0"
+    sTr += i
 
 
-# dataWrite.write(sTr)
-# dataWrite.close()
+# метод write() используется для перезаписи файла
+dataWrite.write(sTr)
+# метод close() закрывает файл (этот метод нельзя вызывать если файл открыт в режиме чтения - "r")
+dataWrite.close()
 
 
 
@@ -28,8 +33,8 @@
 
 # урок 2 ----------------
 
-read = open("C:/Games/sel.txt",'r').read()
-print(read)
+# read = open("C:/Games/sel.txt",'r').read()
+# print(read)
 
 
 
