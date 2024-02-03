@@ -1,24 +1,30 @@
+# импортируем библиотеку tkinter
 from tkinter import *
-a=0
+
+# функция которая должна вызываться при нажатии на кнопку
 def click():
+    # изменяем текст Label
+    # inp.get() берём текст из Entry (input)
     text.configure(text=inp.get())
 
+# создаём окно 
 window = Tk()
+# меняем название окна
 window.title("12345")
+# меняем ширину и высоту окна 
 window.geometry('400x250')
 
-text = Label(window,text="Привет", padx=60, pady=30)
+# создаём текст
+text = Label(text="Привет", padx=60, pady=30)
 text.grid(column=0, row=0)
 
-inp = Entry(window,width=10)
+# создаём ввод (input)
+inp = Entry(width=10)
 inp.grid(column=0, row=1)
 
-button = Button(window,text="Не нажимать!", command=click)
+# создаём кнопку                     command вызывает функцию
+button = Button(text="Не нажимать!", command=click)
 button.grid(column=1, row=1)
 
-# .place(x=50,y=50)
-
-
-
-
+# метод mainloop() оставляет окно открытым
 window.mainloop()
