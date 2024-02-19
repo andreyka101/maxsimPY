@@ -7,8 +7,8 @@ from tkinter import *
 #     # inp.get() берём текст из Entry (input)
 #     text.configure(text=inp.get())
 
-# def printGeometry():
-    # text.configure(text=window.geometry())
+def printGeometry():
+    text.configure(text=window.geometry())
 
 click = 0
 def clicer():
@@ -30,8 +30,8 @@ window.geometry('400x250')
 print(window.geometry())
 
 # создаём текст
-# text = Label(text=window.geometry(), padx=60, pady=30)
-# text.pack(anchor="center")
+text = Label(text=window.geometry(), padx=60, pady=30)
+text.pack(anchor="center")
 
 # создаём ввод (input)
 # inp = Entry(width=10)
@@ -45,7 +45,7 @@ print(window.geometry())
 # создаём кнопку                     command вызывает функцию
 # TODO padx=30, pady=30 задают толщину рамок блока
 # button = Button(text="000000000", command=clicer , padx=30, pady=30)
-button = Button(text="0", command=clicer , bg = "#910000")
+button = Button(text="0", command=printGeometry , bg = "#910000")
 # button.pack(expand=True)
 # TODO h=60 , w=60 задают ширину и высоту блока
 button.place(h=60 , w=60)
