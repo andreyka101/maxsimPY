@@ -3,7 +3,7 @@ window = Tk()
 
 def fun():
     st = ent.get()
-    text.configure(text=st.swapcase())
+    text.configure(text= "ответ:" + st.swapcase())
 
 window.title("input")
 # меняем ширину и высоту окна 
