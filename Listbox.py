@@ -12,9 +12,19 @@ def fun():
     # listBox.insert(listBox.curselection(),"2")
     # tex.configure(text=listBox.size())
 
-    listBox.insert(listBox.curselection(),ent.get())
-    listBox.delete(listBox.curselection())
+    # listBox.insert(listBox.curselection(),ent.get())
+    # listBox.delete(listBox.curselection())
+    # ent.delete(0, END)
+
+    stop = False
+    for i in ent.get():
+        if (i !=" "):
+            stop = True
+    if (stop):
+        listBox.insert(listBox.curselection(),ent.get())
+        listBox.delete(listBox.curselection())
     ent.delete(0, END)
+    tex.configure(text=ent.get())
 
  
 arr = ["Python", "JavaScript", "C#", "Java"]
