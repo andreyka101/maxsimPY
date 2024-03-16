@@ -12,15 +12,16 @@ def fun():
     listBox.insert(listBox.curselection(),"2")
     # tex.configure(text=listBox.size())
 
-    
 
  
 arr = ["Python", "JavaScript", "C#", "Java", "JavaScript", "C#", "Java", "JavaScript", "C#", "Java", "JavaScript", "C#", "Java", "JavaScript", "C#", "Java", "JavaScript", "C#", "Java"]
  
 listBox = Listbox(listvariable=Variable(value=arr),selectmode=EXTENDED)
-listBox.pack( x=0 , y = 0,  padx=5, pady=5)
+listBox.pack(side=LEFT,anchor=NW, fill=X, padx=5, pady=5)
 #  anchor=NW,
                   
+languages_var = StringVar(value=arr)
+listbox = Listbox(listvariable=languages_var)
 
 scrollbar = Scrollbar(orient="vertical", command=listBox.yview)
 scrollbar.pack(side=RIGHT, fill=Y)
@@ -36,5 +37,5 @@ button.place(h=61 , w=61 , x=170 , y = 115)
 
 ent = Entry(text="ответ:")
 ent.place(h=31 , w=71 , x=170 , y = 10)
- 
+
 root.mainloop()
