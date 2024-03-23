@@ -20,7 +20,7 @@ text.place(h=11 , x=0 , y = 85)
 
 
 
-progress = ttk.Progressbar(orient="vertical", length=00, value=0)
+progress = ttk.Progressbar(orient="vertical", maximum=200 , length=100, value=0)
 progress.pack()
 
 
