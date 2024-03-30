@@ -1,21 +1,31 @@
 from tkinter import *
 window = Tk()
 
+
 def motion(event):
+    х,y = window.winfo_pointerxy()
+    widget = window.winfo_containing(х,y)
     x = event.x
     y = event.y
     window.title(str(x) + " : " + str(y))
+    text.config(text = str(widget))
 
 
 def butL(event):
-    x = event.x
-    y = event.y
-    text.config(text = event.state)
+    х,y = window.winfo_pointerxy()
+    widget = window.winfo_containing(х,y)
     # if(x<250 and y<250):
-    # event
-    # .config(bg = "#f2dd22")
+    if(str(widget) == ".!label" or str(widget) == ".!label2" or str(widget) == ".!label3" or str(widget) == ".!label4"):
+        widget.config(bg = "#f2dd22")
     
-# def butR(event):
+
+
+def butR(event):
+    х,y = window.winfo_pointerxy()
+    widget = window.winfo_containing(х,y)
+    # if(x<250 and y<250):
+    if(str(widget) == ".!label" or str(widget) == ".!label2" or str(widget) == ".!label3" or str(widget) == ".!label4"):
+        widget.config(bg = "#888888")
 
 
 
@@ -25,7 +35,7 @@ window.geometry('500x500')
 
 window.bind("<Motion>" , motion)
 window.bind("<Button-1>" , butL)
-# window.bind("<Button-3>" , butR)
+window.bind("<Button-3>" , butR)
 
 block1 = Label(text="" , bg = "#2ac9a2")
 block1.place(h=250 , w =250 , x=0 , y = 0)
