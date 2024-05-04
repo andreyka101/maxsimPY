@@ -1,8 +1,10 @@
-a=int(input())
+# a=int(input())
+import random
+a=10000
 a1=0
 c=[]
 while a1!=a:
-    c.append(int(input()))
+    c.append(random.randint(1, 100000))
     a1+=1
 bb=0
 while c!=[]:
@@ -19,3 +21,4 @@ while c!=[]:
     bb+=1
 print(bb)
 #Превышен лимит времени исполнения
+# 2.22 - 2.23

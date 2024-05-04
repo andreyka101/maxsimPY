@@ -1,12 +1,36 @@
-student_number = int(input())
-queue_students = []
-# errors
+# students_num = int(input())
+import random
+students_num = 10000
+students_grade_arr = []
+num = 0
 
-for i in range(student_number):
-    queue_students.append(int(input()))
+def cheating_function(x):
+    global grade
+    if(x >= grade):
+        return x-1
+    return x
 
-while queue_students!=[]:
-    queue_students[0] -=1
+
+for i in range(students_num):
+    students_grade_arr.append(random.randint(1, 100000))
+
+print("*******************")
+# print(students_grade_arr)
+while students_grade_arr!=[]:
+    num +=1
+    if(students_grade_arr[0] == 0):
+        students_grade_arr.pop(0)
+    else:
+        grade = students_grade_arr[0]
+        students_grade_arr.pop(0)
+        students_grade_arr = list(map(cheating_function , students_grade_arr))
+        students_grade_arr.append(grade - 1)
+    # print(students_grade_arr)
+
+print("===============")
+# print(students_grade_arr)
+print("end",num)
+# 1.18 - 1.19
     
 
 
