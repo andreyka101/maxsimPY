@@ -3,7 +3,7 @@ from tkinter import *
 root = Tk()
 root.geometry('600x500')
  
-canV = Canvas(width=400, height=400, bg='white')
+canV = Canvas(width=600, height=600, bg='white')
 canV.pack()
  
  #!SECTION урок 1
@@ -55,9 +55,9 @@ canV.pack()
 
 
 #ANCHOR - image
-python_image = PhotoImage(file="image_2.png")
+python_image = PhotoImage(file="image_4.png")
  
-canV.create_image(100, 100, anchor=NW, image=python_image)
+canV.create_image(300, 300, image=python_image)
 
 
 
