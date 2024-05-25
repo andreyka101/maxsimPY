@@ -50,8 +50,9 @@ canV.pack()
 # canV.create_arc(50,50,300,300,start=180,extent=120,width=4,fill='green',style='arc')
 # canV.create_arc(50,50,300,300,start=180,extent=120,width=4,fill='green',style='chord')
 
-# canV.create_arc(50,50,300,300,start=180,extent=120,width=4,fill='green',style='chord')
-# canV.create_arc(50,50,300,300,start=0,extent=180,width=4,fill='red',style='chord')
+canV.create_arc(50,50,300,300,start=180,extent=120,width=4,fill='green',style='chord')
+canV.create_arc(50,50,300,300,start=0,extent=180,width=4,fill='red',style='chord')
+canV.create_window
 
 
 #ANCHOR - image
