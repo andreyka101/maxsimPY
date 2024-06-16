@@ -13,8 +13,6 @@ move_snake_number_XY = {
 move_snake_number_x = 0
 move_snake_number_y = 0
 move_snake_number_wh = 50
-#FIXME - ghuhgrughgr
-fg = 0
 
 
 
@@ -41,7 +39,7 @@ canV.create_rectangle(move_snake_number_x, move_snake_number_y, move_snake_numbe
 
 while(timePassed <= 2000):
     # print(timePassed)
-    timePassed = time_fun() - fg
+    timePassed = time_fun()
     print(round(timePassed) * speed)
     canV.update()
     root.bind("<KeyPress>" , keyPress)
