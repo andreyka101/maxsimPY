@@ -61,7 +61,6 @@ python_image = PhotoImage(file="image_4.png")
 canV.create_image(300, 300, image=python_image)
 
 
-
 # canV.create_arc
  
 root.mainloop()
