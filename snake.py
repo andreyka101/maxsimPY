@@ -34,8 +34,10 @@ def keyPress(event):
         bool_snake = False
         canV.place(x=-1000,y=-1000)
         start_b.config(text="restart")
-        start_text.config(text="ваш рекорд: "+ str(check_num_snake))
-
+        # start_text.config(text="ваш рекорд: "+ str(check_num_snake))
+        with open("record.txt",'r') as file:
+            fileRead = file.read()
+            start_text.config(text="ваш рекорд: "+ str(fileRead))
     # if(event.keysym == "")
     # if (event.keysym == "Left"):
     # if (event.keysym == "Down"):
@@ -110,54 +112,40 @@ def fun_start():
                 if(move_snake_old == "Left"):
                     moving_body_snake()
                     arr_move_snake_number[0]["move_snake_number_x"] -= speed
-                    if(arr_move_snake_number[0]["move_snake_number_x"]<0):
-                        arr_move_snake_number[0]["move_snake_number_x"] = 550
                 else: 
                     moving_body_snake()
                     arr_move_snake_number[0]["move_snake_number_x"] += speed
-                    if(arr_move_snake_number[0]["move_snake_number_x"]>550):
-                        arr_move_snake_number[0]["move_snake_number_x"] = 0
                     move_snake_old = move_snake
         if(move_snake == "Left" and round(timePassed_old) != round(timePassed)):
                 if(move_snake_old == "Right"):
                     moving_body_snake()
                     arr_move_snake_number[0]["move_snake_number_x"] += speed
-                    if(arr_move_snake_number[0]["move_snake_number_x"]>550):
-                        arr_move_snake_number[0]["move_snake_number_x"] = 0
                 else: 
                     moving_body_snake()
                     arr_move_snake_number[0]["move_snake_number_x"] -= speed
-                    if(arr_move_snake_number[0]["move_snake_number_x"]<0):
-                        arr_move_snake_number[0]["move_snake_number_x"] = 550
                     move_snake_old = move_snake
         elif(move_snake == "Down" and round(timePassed_old) != round(timePassed)):
                 if(move_snake_old == "Up"):
                     moving_body_snake()
                     arr_move_snake_number[0]["move_snake_number_y"] -= speed
-                    if(arr_move_snake_number[0]["move_snake_number_y"]<0):
-                        arr_move_snake_number[0]["move_snake_number_y"] =450
                 else: 
                     moving_body_snake()
                     arr_move_snake_number[0]["move_snake_number_y"] += speed
-                    if(arr_move_snake_number[0]["move_snake_number_y"]>450):
-                        arr_move_snake_number[0]["move_snake_number_y"] = 0
                     move_snake_old = move_snake
         elif(move_snake == "Up" and round(timePassed_old) != round(timePassed)):
                 if(move_snake_old == "Down"):
                     moving_body_snake()
                     arr_move_snake_number[0]["move_snake_number_y"] += speed
-                    if(arr_move_snake_number[0]["move_snake_number_y"]>450):
-                        arr_move_snake_number[0]["move_snake_number_y"] = 0
                 else:
                     moving_body_snake()
                     arr_move_snake_number[0]["move_snake_number_y"] -= speed
-                    if(arr_move_snake_number[0]["move_snake_number_y"]<0):
-                        arr_move_snake_number[0]["move_snake_number_y"] = 450
                     move_snake_old = move_snake
                             
     
         if(arr_move_snake_number[0]["move_snake_number_y"] == applePositionY and arr_move_snake_number[0]["move_snake_number_x"] == applePositionX):
             # canV.create_rectangle(arr_move_snake_number[0]["move_snake_number_x"], arr_move_snake_number[0]["move_snake_number_y"], arr_move_snake_number[0]["move_snake_number_x"] + move_snake_number_wh, arr_move_snake_number[0]["move_snake_number_y"] + move_snake_number_wh,fill='green', outline='green')
+            from audioplayer import AudioPlayer
+            AudioPlayer("8d3b1fa30e92ead.mp3").play(block=True)
             if(move_snake == "Right"):
                 arr_move_snake_number.append({
                     "move_snake_number_x" : arr_move_snake_number[len(arr_move_snake_number)-1]["move_snake_number_x"] - speed,
@@ -184,6 +172,14 @@ def fun_start():
                 })
             check_num_snake += 1
             check_text_snake.config(text="счёт: "+str(check_num_snake))
+            fileRead = open("record.txt",'r').read()
+            if check_num_snake > int(fileRead):
+                # fileRead.close()
+                # with open("record.txt",'r') as file:
+                #         file.write(str(check_num_snake))
+                file = open("record.txt",'w')
+                file.write(str(check_num_snake))
+                file.close()
             for i in arr_move_snake_number:
                 while(i["move_snake_number_y"] == applePositionY and i["move_snake_number_x"] == applePositionX):
                     applePositionY = 50 * random.randint(0, 9)
@@ -239,7 +235,13 @@ def fun_start():
             print(string_foto)
             arr_move_snake_number[i]["image_snake"] = PhotoImage(file=string_foto)
             canV.create_image(arr_move_snake_number[i]["move_snake_number_x"] +25, arr_move_snake_number[i]["move_snake_number_y"] + 25,image=arr_move_snake_number[i]["image_snake"])
-        
+        if (arr_move_snake_number[0]["move_snake_number_x"]<0 or arr_move_snake_number[0]["move_snake_number_x"]>550 or arr_move_snake_number[0]["move_snake_number_y"]<0 or arr_move_snake_number[0]["move_snake_number_y"]>450):
+            bool_snake = False
+            canV.place(x=-1000,y=-1000)
+            start_b.config(text="restart")
+            with open("record.txt",'r') as file:
+                fileRead = file.read()
+            start_text.config(text="ваш рекорд: "+ str(fileRead))
                     # global bool_snake
         for x in range(len(arr_move_snake_number)):
             for y in range(len(arr_move_snake_number)):
@@ -248,7 +250,9 @@ def fun_start():
                     bool_snake = False
                     canV.place(x=-1000,y=-1000)
                     start_b.config(text="restart")
-                    start_text.config(text="ваш рекорд: "+ str(check_num_snake))
+                    with open("record.txt",'r') as file:
+                        fileRead = file.read()
+                    start_text.config(text="ваш рекорд: "+ str(fileRead))
                     print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
         # canV.create_rectangle(0  + round(timePassed) * speed, 0, 50  + round(timePassed) * speed, 50,fill='green', outline='green')
@@ -262,9 +266,10 @@ start_b = Button(text="start", command=fun_start , bg = "#925cff", font="system 
 start_b.place(h=40 , w=80 ,x=300-40 ,y=250-20)
 start_b.bind("<Enter>", hover)
 start_b.bind("<Leave>", not_hover)
-start_text = Label(text="ваш рекорд: "+ str(check_num_snake), font="system 17", state=["disabled"])
+with open("record.txt",'r') as file:
+    fileRead = file.read()
+start_text = Label(text="ваш рекорд: "+ str(fileRead), font="system 13", state=["disabled"])
 start_text.place(h=40 , w=160 ,x=300-80 ,y=160)
-
 
 
 
