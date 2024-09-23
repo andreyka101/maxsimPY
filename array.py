@@ -53,3 +53,4 @@ print(arr)
 # преобразование массива в список.
 # print(type(arr))
 # print(type(arr.tolist()))
+efefef
