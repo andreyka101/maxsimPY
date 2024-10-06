@@ -1,6 +1,8 @@
 import time 
 from tkinter import *
 import random
+from audioplayer import AudioPlayer
+import threading
 # start = time.time()
 # timePassed = time.time() - start
 speed = 50
@@ -18,6 +20,9 @@ applePositionY = 50 * random.randint(0, 9)
 applePositionX = 50 * random.randint(0, 11)
 bool_snake = True
 check_num_snake = 0
+
+def fun_audio():
+    AudioPlayer("8d3b1fa30e92ead.mp3").play(block=True)
 
 
 
@@ -144,8 +149,10 @@ def fun_start():
     
         if(arr_move_snake_number[0]["move_snake_number_y"] == applePositionY and arr_move_snake_number[0]["move_snake_number_x"] == applePositionX):
             # canV.create_rectangle(arr_move_snake_number[0]["move_snake_number_x"], arr_move_snake_number[0]["move_snake_number_y"], arr_move_snake_number[0]["move_snake_number_x"] + move_snake_number_wh, arr_move_snake_number[0]["move_snake_number_y"] + move_snake_number_wh,fill='green', outline='green')
-            from audioplayer import AudioPlayer
-            AudioPlayer("8d3b1fa30e92ead.mp3").play(block=True)
+            
+            # AudioPlayer("8d3b1fa30e92ead.mp3").play(block=True)
+            thread_fun = threading.Thread(target=fun_audio)
+            thread_fun.start()
             if(move_snake == "Right"):
                 arr_move_snake_number.append({
                     "move_snake_number_x" : arr_move_snake_number[len(arr_move_snake_number)-1]["move_snake_number_x"] - speed,
