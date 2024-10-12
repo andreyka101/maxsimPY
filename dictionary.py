@@ -37,5 +37,30 @@ obj = {
 # obj.update({"ttt":9,"poi":"uuu"})
 
 
-print(obj)
+
+num_inp = input("==")
+if(num_inp == "q"):
+    print(2)
+elif(num_inp == "w"):
+    print(3)
+elif(num_inp == "e"):
+    print(4)
+elif(num_inp == "r"):
+    print(5)
+elif(num_inp == "t"):
+    print(6)
+
+
+
+def fun():
+    q = 8*9
+    print(70)
+if_obj = {
+    "q": fun(),
+    "w": 3,
+    "e": 4,
+    "r": 5,
+    "t": 6,
+}
+print(if_obj[num_inp])
 
