@@ -2,7 +2,6 @@ import array
 # https://pythonworld.ru/moduli/modul-array-massivy-v-python.html
 arr = array.array('i',[180,2,3,1,2,3])
 print(arr)
-# 14479
 
 # размер в байтах одного элемента в массиве.
 # print(arr.itemsize)
