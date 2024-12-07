@@ -21,10 +21,12 @@ def fun():
         if (i !=" "):
             stop = True
     if (stop):
+        # listBox.insert(0,ent.get())
         listBox.insert(listBox.curselection(),ent.get())
         listBox.delete(listBox.curselection())
     ent.delete(0, END)
-    tex.configure(text=ent.get())
+    tex.configure(text=listBox.curselection())
+    
 
  
 arr = ["Python", "JavaScript", "C#", "Java"]

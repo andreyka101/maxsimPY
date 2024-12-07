@@ -8,7 +8,7 @@ def motion(event):
     x = event.x
     y = event.y
     window.title(str(x) + " : " + str(y))
-    text.config(text = str(widget))
+    text.config(text = window.winfo_pointerxy())
 
 
 def butL(event):

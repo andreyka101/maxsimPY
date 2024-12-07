@@ -11,7 +11,7 @@ def fun(getNum):
     text.place(x=int_value)
 
 
-scale1 = ttk.Scale(orient=HORIZONTAL , length=200 , from_=1 , to=200 , command=fun)
+scale1 = ttk.Scale(orient=HORIZONTAL , length=200 , from_=1 , to=100 , command=fun)
 scale1.pack()
 
 text = Label(text="ответ:")

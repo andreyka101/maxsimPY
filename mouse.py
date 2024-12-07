@@ -6,7 +6,7 @@ def motion(event):
     y = event.y
     window.title(str(x) + " : " + str(y))
 def b1(event):
-    # text.config(text=event)
+    text.config(text=event)
     text.config(text="b1")
 def b2(event):
     text.config(text="b2")
